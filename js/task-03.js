@@ -37,21 +37,34 @@ const images = [
 // padding: 0;
 // `;
 
-const gallery = document.querySelector(".gallery");
+// const galleryEl = document.querySelector(".gallery");
 
-let galleryList = "";
-for (const image of images) {
-  galleryList += `<li><img alt="${image.alt}" src="${image.url}" width = 200 height = 150> </li>`;
-}
+// let galleryList = "";
+// for (const image of images) {
+//   galleryList += `<li><img alt="${image.alt}" src="${image.url}" width = 200 height = 150> </li>`;
+// }
 
 
-gallery.insertAdjacentHTML("afterbegin", galleryList);
+// galleryEl.insertAdjacentHTML("afterbegin", galleryList);
 
-gallery.style.cssText = `display: flex;
+
+
+const galleryEL = document.querySelector('.gallery');
+
+const galleryListEl = ({ url, alt } = {}) => {
+  return `<li "><img src="${url}" alt="${alt}" width = 200 height = 200></li>`;
+};
+
+const galleryLi = images.map(galleryListEl).join('');
+
+galleryEL.insertAdjacentHTML('beforeend', galleryLi);
+
+galleryEL.style.cssText = `display: flex;
 align-items: center;
 justify-content: center;
 list-style-type: none;
 gap:30px;
 margin:0;
 padding: 0;
+margin-top: 40px;
 `;
