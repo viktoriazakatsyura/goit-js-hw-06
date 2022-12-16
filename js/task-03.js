@@ -13,58 +13,17 @@ const images = [
 	},
 ];
 
+const galleryEl = document.querySelector(".gallery");
+console.log(galleryEl);
 
-// for (const { url, alt } of images) {
-// 	gallery.insertAdjacentHTML(
-// 		"beforeend",
-// 		`<li> <img src="${url}" alt ="${alt}" width = 200 height = 150> </li>`
-// 	);
-// }
+const galleryList = images
+  .map(
+    ({ url, alt }) =>
+      `<li class="gallery_item"><img class="gallery_img" src="${url}" alt="${alt}"/></li>`
+  )
+  .join("");
 
-// const galleryList = ({ url, alt }) => {
-// 	return `<li>
-// 	<img src='${url} alt='${alt}' width = 200 height = 150></img>
-// 	</li>`;
-// };
-// gallery.insertAdjacentHTML("afterbegin", images.map(galleryList).join(""));
-
-// gallery.style.cssText = `display: flex;
-// align-items: center;
-// justify-content: center;
-// list-style-type: none;
-// gap:30px;
-// margin:0;
-// padding: 0;
-// `;
-
-// const galleryEl = document.querySelector(".gallery");
-
-// let galleryList = "";
-// for (const image of images) {
-//   galleryList += `<li><img alt="${image.alt}" src="${image.url}" width = 200 height = 150> </li>`;
-// }
-
-
-// galleryEl.insertAdjacentHTML("afterbegin", galleryList);
+galleryEl.insertAdjacentHTML("beforeend", galleryList);
 
 
 
-const galleryEL = document.querySelector('.gallery');
-
-const galleryListEl = ({ url, alt } = {}) => {
-  return `<li "><img src="${url}" alt="${alt}" width = 200 height = 200></li>`;
-};
-
-const galleryLi = images.map(galleryListEl).join('');
-
-galleryEL.insertAdjacentHTML('beforeend', galleryLi);
-
-galleryEL.style.cssText = `display: flex;
-align-items: center;
-justify-content: center;
-list-style-type: none;
-gap:30px;
-margin:0;
-padding: 0;
-margin-top: 40px;
-`;
