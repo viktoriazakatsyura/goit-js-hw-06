@@ -17,18 +17,18 @@ const images = [
 // for (const { url, alt } of images) {
 // 	gallery.insertAdjacentHTML(
 // 		"beforeend",
-// 		`<li> <img src="${url}" alt ="${alt}" width = 200 heigth = 150> </li>`
+// 		`<li> <img src="${url}" alt ="${alt}" width = 200 height = 150> </li>`
 // 	);
 // }
 
 // const galleryList = ({ url, alt }) => {
 // 	return `<li>
-// 	<img src='${url} alt='${alt}' width = 200 heigth = 150></img>
+// 	<img src='${url} alt='${alt}' width = 200 height = 150></img>
 // 	</li>`;
 // };
 // gallery.insertAdjacentHTML("afterbegin", images.map(galleryList).join(""));
 
-// gallery.style.cssText = `dispaly: flex;
+// gallery.style.cssText = `display: flex;
 // align-items: center;
 // justify-content: center;
 // list-style-type: none;
@@ -41,13 +41,13 @@ const gallery = document.querySelector(".gallery");
 
 let galleryList = "";
 for (const image of images) {
-  galleryList += `<li><img alt="${image.alt}" src="${image.url}" width = 200 heigth = 150> </li>`;
+  galleryList += `<li><img alt="${image.alt}" src="${image.url}" width = 200 height = 150> </li>`;
 }
 
 
 gallery.insertAdjacentHTML("afterbegin", galleryList);
 
-gallery.style.cssText = `dispaly: flex;
+gallery.style.cssText = `display: flex;
 align-items: center;
 justify-content: center;
 list-style-type: none;
